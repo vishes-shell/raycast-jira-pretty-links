@@ -23,7 +23,7 @@ export default async function copyRocketLink(props: LaunchProps<{ arguments: Iss
     await showHUD(`📋 Copied link to issue ${key}`);
   } catch (err) {
     toast.style = Toast.Style.Failure;
-    toast.title = `Error: ${err.message}`;
+    toast.title = `${err}`;
     return;
   }
 }
