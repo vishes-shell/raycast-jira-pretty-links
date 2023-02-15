@@ -2,7 +2,7 @@
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "jira-pretty-links",
   "title": "Jira Pretty Links",
-  "description": "Format jira links at ease",
+  "description": "Format Jira Issue links at ease",
   "icon": "mark-gradient-blue-jira.svg",
   "author": "vishes-shell",
   "categories": [
@@ -11,14 +11,53 @@
   "license": "MIT",
   "commands": [
     {
-      "name": "index",
-      "title": "Copy Rocket.Chat link",
-      "description": "",
-      "mode": "no-view"
+      "name": "rocket",
+      "title": "Copy Jira issue Rocket.Chat link",
+      "description": "Copy Jira issue formatted link for Rocket.Chat",
+      "mode": "no-view",
+      "icon": "rocket.png",
+      "arguments": [
+        {
+          "name": "key",
+          "placeholder": "Issue Key",
+          "type": "text",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "preferences": [
+    {
+      "name": "instance",
+      "type": "textfield",
+      "required": true,
+      "title": "Jira URL",
+      "description": "URL of your Jira instance",
+      "placeholder": "URL of your Jira instance e.g. https://jira.company.com"
+    },
+    {
+      "name": "token",
+      "type": "password",
+      "required": true,
+      "title": "API token",
+      "description": "Your personal Jira API Token",
+      "link": "https://confluence.atlassian.com/enterprise/using-personal-access-tokens-1026032365.html",
+      "placeholder": "Your Jira Personal API Token"
+    },
+    {
+      "name": "linktextformat",
+      "type": "textfield",
+      "required": true,
+      "title": "Link text format",
+      "description": "Format of link text",
+      "placeholder": "Link text format, allowed values: `key`, `summary`",
+      "default": "${key}: ${summary}"
     }
   ],
   "dependencies": {
-    "@raycast/api": "^1.47.3"
+    "@raycast/api": "^1.47.3",
+    "@types/jira-client": "^7.1.6",
+    "jira-client": "^8.2.2"
   },
   "devDependencies": {
     "@types/node": "18.8.3",
