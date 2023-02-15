@@ -3,7 +3,7 @@
   "name": "jira-pretty-links",
   "title": "Jira Pretty Links",
   "description": "Format Jira Issue links at ease",
-  "icon": "mark-gradient-blue-jira.svg",
+  "icon": "extension_icon.png",
   "author": "vishes-shell",
   "categories": [
     "Productivity"
